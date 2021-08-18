@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header,
+#fakeHeader {
+  position: relative;
+  height: 150px;
+  width: 100vw;
+  background-color: #ffffff;
+  border-bottom: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  z-index: 1987;
+}
+
+#fakeHeader {
+  height: 75px;
+  position: fixed;
+  top: -75px;
+  opacity: 0;
+  transition: all 1s ease;
+  z-index: 1986;
+}
+
+#searchBar,
+footer {
+  display: none;
+  transition: all 1s ease;
+}
+
+#searchBar {
+  position: fixed;
+  height: 45px;
+  width: 100%;
+  background-color: white;
+  top: 0px;
+  padding: 6px 15px;
+}
+#searchBar input {
+  width: 100%;
+  background-color: #5f5f5f7a;
+  border-radius: 10px;
+}
+#searchBar.hide {
+  top: -45px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  background-color: white;
+  width: 100%;
+  border-top: 1px solid rgba(40, 40, 40, 0.4);
+  justify-content: space-between;
+  padding: 0 15px;
+}
+footer.hide {
+  bottom: -45px;
+}
+footer .btn {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px;
+}
+footer .btn svg {
+  width: 24px;
+  height: 24px;
+}
+footer .btn svg path {
+  fill: #5f5f5f;
+}
+footer .btn svg.pinterest path {
+  fill: #e6001a;
+}
+
+#content {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  padding: 5px;
+}
+
+.column {
+  padding: 5px;
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+.column .element {
+  width: 100%;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+.column .element img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 375px) {
+  #content {
+    flex-flow: row wrap;
+  }
+
+  .column {
+    flex: 50%;
+  }
+
+  #searchBar,
+footer {
+    display: flex;
+    height: 45px;
+  }
+
+  header,
+#fakeHeader {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
